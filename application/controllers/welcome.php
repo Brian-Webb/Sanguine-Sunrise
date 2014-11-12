@@ -19,7 +19,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+        //gather battlnet data
+        $this->load->library('battlenet');
+        $fullResults = $this->battlenet->guildProfileApi('members');
+
+        $data['members'] = $fullResults['members'];
+
+        $this->load->view('welcome_message', $data);
 	}
 }
 
