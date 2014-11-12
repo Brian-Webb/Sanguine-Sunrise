@@ -11,3 +11,4 @@ application/logs/*
 application/config/config.php
 application/config/databases.php
 application/libraries/Battlenet.php
+/workspace.xml
