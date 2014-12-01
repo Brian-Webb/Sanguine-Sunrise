@@ -5,12 +5,12 @@ namespace Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Character
+ * BnCharacter
  *
  * @Table(name="battlenet_Character")
  * @Entity
  */
-class Character
+class BnCharacter
 {
     /**
      * @var integer
@@ -43,9 +43,9 @@ class Character
     private $thumbnail;
     
     /**
-     * @var \Entity\CharacterClass
+     * @var \Entity\BnCharacterClass
      *
-     * @ManyToOne(targetEntity="Entity\CharacterClass")
+     * @ManyToOne(targetEntity="Entity\BnCharacterClass")
      * @JoinColumns({
      *   @JoinColumn(name="class", referencedColumnName="id", nullable=false)
      * })
@@ -53,9 +53,9 @@ class Character
     private $class;
     
     /**
-     * @var \Entity\CharacterRace
+     * @var \Entity\BnCharacterRace
      *
-     * @ManyToOne(targetEntity="Entity\CharacterRace")
+     * @ManyToOne(targetEntity="Entity\BnCharacterRace")
      * @JoinColumns({
      *   @JoinColumn(name="race", referencedColumnName="id", nullable=false)
      * })
@@ -76,7 +76,7 @@ class Character
      * Set name
      *
      * @param string $name
-     * @return Character
+     * @return BnCharacter
      */
     public function setName($name)
     {
@@ -99,7 +99,7 @@ class Character
      * Set level
      *
      * @param int $level
-     * @return Character
+     * @return BnCharacter
      */
     public function setLevel($level)
     {
@@ -122,7 +122,7 @@ class Character
      * Set thumbnail
      *
      * @param string $thumbnail
-     * @return Character
+     * @return BnCharacter
      */
     public function setThumbnail($thumbnail)
     {
@@ -144,10 +144,10 @@ class Character
     /**
      * Set class
      *
-     * @param \Entity\CharacterClass $class
-     * @return Character
+     * @param \Entity\BnCharacterClass $class
+     * @return BnCharacter
      */
-    public function setClass(\Entity\CharacterClass $class = null)
+    public function setClass(\Entity\BnCharacterClass $class = null)
     {
         $this->class = $class;
     
@@ -157,7 +157,7 @@ class Character
     /**
      * Get class
      *
-     * @return \Entity\CharacterClass
+     * @return \Entity\BnCharacterClass
      */
     public function getClass()
     {
@@ -167,10 +167,10 @@ class Character
     /**
      * Set race
      *
-     * @param \Entity\CharacterRace $race
-     * @return Character
+     * @param \Entity\BnCharacterRace $race
+     * @return BnCharacter
      */
-    public function setRace(\Entity\CharacterRace $race = null)
+    public function setRace(\Entity\BnCharacterRace $race = null)
     {
         $this->race = $race;
     
@@ -180,7 +180,7 @@ class Character
     /**
      * Get race
      *
-     * @return \Entity\CharacterRace
+     * @return \Entity\BnCharacterRace
      */
     public function getRace()
     {
