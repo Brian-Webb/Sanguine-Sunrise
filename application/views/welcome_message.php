@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>Welcome to CodeIgniter 3</title>
 
 	<style type="text/css">
 
@@ -26,6 +26,7 @@
 	h1 {
 		color: #444;
 		background-color: transparent;
+                
 		border-bottom: 1px solid #D0D0D0;
 		font-size: 19px;
 		font-weight: normal;
@@ -69,6 +70,12 @@
 <div id="container">
 
 	<div id="body">
+            <pre>
+                <?php print_r($members) ?>
+            </pre>
+            <hr />
+            <?php widget::run('user_login'); ?> 
+            <hr />
         <h3>Members (<?php echo count($members); ?>):</h3>
         <ul>
             <?php foreach ($members as $member): ?>
