@@ -38,9 +38,8 @@
 |
 */
 
-$route['default_controller'] = "welcome";
-$route['404_override'] = '';
+$route['default_controller'] = 'home';
+$route['404_override'] = 'missing_page';
 
-
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */
+//custom routes for subfolders
+$route['cron/(:any)'] = 'cron/$1';
