@@ -6,10 +6,11 @@
  * and open the template in the editor.
  */
 
-class User_login extends Widget
+class Character_list extends Widget
 {
     function run() {
+        $data['characters'] = $this->bn_character_model->get_characters();
         
-        $this->render('test');
+        $this->render('character_list', $data);
     }
 } 
