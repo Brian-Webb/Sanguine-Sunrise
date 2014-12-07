@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = true;
 
-$db['default']['hostname'] = 'ns4.atjeu.com';
-$db['default']['username'] = 'exponent_ss';
-$db['default']['password'] = 'Kanowano123';
-$db['default']['database'] = 'exponent_sanguine-sunrise';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'sanguine_sunrise';
+$db['default']['password'] = 'SSwow123!';
+$db['default']['database'] = 'sanguine_sunrise';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = true;
