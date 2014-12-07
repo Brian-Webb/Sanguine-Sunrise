@@ -1,16 +1,40 @@
 <?php
 
+/* 
+ * The MIT License
+ *
+ * Copyright 2014 Brian Webb (webbsdomain@gmail.com).
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 namespace Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * BnCharacter
+ * Bn_character
  *
  * @Table(name="battlenet_Character")
  * @Entity
  */
-class BnCharacter
+class Bn_character
 {
     /**
      * @var integer
@@ -43,9 +67,9 @@ class BnCharacter
     private $thumbnail;
     
     /**
-     * @var \Entity\BnCharacterClass
+     * @var \Entity\Bn_character_class
      *
-     * @ManyToOne(targetEntity="Entity\BnCharacterClass")
+     * @ManyToOne(targetEntity="Entity\Bn_character_class")
      * @JoinColumns({
      *   @JoinColumn(name="class", referencedColumnName="id", nullable=false)
      * })
@@ -53,9 +77,9 @@ class BnCharacter
     private $class;
     
     /**
-     * @var \Entity\BnCharacterRace
+     * @var \Entity\Bn_character_race
      *
-     * @ManyToOne(targetEntity="Entity\BnCharacterRace")
+     * @ManyToOne(targetEntity="Entity\Bn_character_race")
      * @JoinColumns({
      *   @JoinColumn(name="race", referencedColumnName="id", nullable=false)
      * })
@@ -67,7 +91,7 @@ class BnCharacter
      *
      * @return integer 
      */
-    public function getId()
+    public function get_id()
     {
         return $this->id;
     }
@@ -76,9 +100,9 @@ class BnCharacter
      * Set name
      *
      * @param string $name
-     * @return BnCharacter
+     * @return Bn_character
      */
-    public function setName($name)
+    public function set_name($name)
     {
         $this->name = $name;
     
@@ -90,7 +114,7 @@ class BnCharacter
      *
      * @return string 
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
@@ -99,9 +123,9 @@ class BnCharacter
      * Set level
      *
      * @param int $level
-     * @return BnCharacter
+     * @return Bn_character
      */
-    public function setLevel($level)
+    public function set_level($level)
     {
         $this->level = $level;
     
@@ -113,7 +137,7 @@ class BnCharacter
      *
      * @return int 
      */
-    public function getLevel()
+    public function get_level()
     {
         return $this->level;
     }
@@ -122,9 +146,9 @@ class BnCharacter
      * Set thumbnail
      *
      * @param string $thumbnail
-     * @return BnCharacter
+     * @return Bn_character
      */
-    public function setThumbnail($thumbnail)
+    public function set_thumbnail($thumbnail)
     {
         $this->thumbnail = $thumbnail;
     
@@ -136,7 +160,7 @@ class BnCharacter
      *
      * @return string 
      */
-    public function getThumbnail()
+    public function get_thumbnail()
     {
         return $this->thumbnail;
     }
@@ -144,10 +168,10 @@ class BnCharacter
     /**
      * Set class
      *
-     * @param \Entity\BnCharacterClass $class
-     * @return BnCharacter
+     * @param \Entity\Bn_character_class $class
+     * @return Bn_character
      */
-    public function setClass(\Entity\BnCharacterClass $class = null)
+    public function set_class(\Entity\Bn_character_class $class = null)
     {
         $this->class = $class;
     
@@ -157,9 +181,9 @@ class BnCharacter
     /**
      * Get class
      *
-     * @return \Entity\BnCharacterClass
+     * @return \Entity\Bn_character_class
      */
-    public function getClass()
+    public function get_class()
     {
         return $this->class;
     }
@@ -167,10 +191,10 @@ class BnCharacter
     /**
      * Set race
      *
-     * @param \Entity\BnCharacterRace $race
-     * @return BnCharacter
+     * @param \Entity\Bn_character_race $race
+     * @return Bn_character
      */
-    public function setRace(\Entity\BnCharacterRace $race = null)
+    public function set_race(\Entity\Bn_character_race $race = null)
     {
         $this->race = $race;
     
@@ -180,9 +204,9 @@ class BnCharacter
     /**
      * Get race
      *
-     * @return \Entity\BnCharacterRace
+     * @return \Entity\Bn_character_race
      */
-    public function getRace()
+    public function get_race()
     {
         return $this->race;
     }

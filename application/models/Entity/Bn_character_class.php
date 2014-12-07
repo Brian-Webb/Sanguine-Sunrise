@@ -1,16 +1,40 @@
 <?php
 
+/* 
+ * The MIT License
+ *
+ * Copyright 2014 Brian Webb (webbsdomain@gmail.com).
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 namespace Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * BnCharacterClass
+ * Bn_character_class
  *
  * @Table(name="battlenet_Character_Classes")
  * @Entity
  */
-class BnCharacterClass
+class Bn_character_class
 {
     /**
      * @var integer
@@ -33,7 +57,7 @@ class BnCharacterClass
      *
      * @Column(name="powerType", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $powerType;
+    private $power_type;
 
     /**
      * @var string
@@ -47,7 +71,7 @@ class BnCharacterClass
      *
      * @return integer 
      */
-    public function getId()
+    public function get_id()
     {
         return $this->id;
     }
@@ -56,9 +80,9 @@ class BnCharacterClass
      * Set mask
      *
      * @param string $mask
-     * @return BnCharacterClass
+     * @return Bn_character_class
      */
-    public function setMask($mask)
+    public function set_mask($mask)
     {
         $this->mask = $mask;
     
@@ -70,41 +94,41 @@ class BnCharacterClass
      *
      * @return integer 
      */
-    public function getMask()
+    public function get_mask()
     {
         return $this->mask;
     }
 
     /**
-     * Set powerType
+     * Set power_type
      *
-     * @param string $powerType
-     * @return BnCharacterClass
+     * @param string $power_type
+     * @return Bn_character_class
      */
-    public function setPowerType($powerType)
+    public function set_power_type($power_type)
     {
-        $this->powerType = $powerType;
+        $this->power_type = $power_type;
     
         return $this;
     }
 
     /**
-     * Get powerType
+     * Get power_type
      *
      * @return string 
      */
-    public function getPowerType()
+    public function get_power_type()
     {
-        return $this->powerType;
+        return $this->power_type;
     }
 
     /**
      * Set name
      *
      * @param string $name
-     * @return BnCharacterClass
+     * @return Bn_character_class
      */
-    public function setName($name)
+    public function set_name($name)
     {
         $this->name = $name;
     
@@ -116,7 +140,7 @@ class BnCharacterClass
      *
      * @return string 
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }

@@ -1,5 +1,29 @@
 <?php
 
+/* 
+ * The MIT License
+ *
+ * Copyright 2014 Brian Webb (webbsdomain@gmail.com).
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 namespace Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -10,7 +34,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @Table(name="battlenet_Guild")
  * @Entity
  */
-class BnGuild
+class Bn_guild
 {
     /**
      * @var integer
@@ -47,14 +71,14 @@ class BnGuild
      *
      * @Column(name="achievementPoints", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
-    private $achievementPoints;
+    private $achievement_points;
     
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
+    public function get_id()
     {
         return $this->id;
     }
@@ -65,7 +89,7 @@ class BnGuild
      * @param string $name
      * @return BnGuild
      */
-    public function setName($name)
+    public function set_name($name)
     {
         $this->name = $name;
     
@@ -77,7 +101,7 @@ class BnGuild
      *
      * @return string 
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
@@ -88,7 +112,7 @@ class BnGuild
      * @param integer $level
      * @return BnGuild
      */
-    public function setLevel($level)
+    public function set_level($level)
     {
         $this->level = $level;
     
@@ -100,7 +124,7 @@ class BnGuild
      *
      * @return integer 
      */
-    public function getLevel()
+    public function get_level()
     {
         return $this->level;
     }
@@ -111,7 +135,7 @@ class BnGuild
      * @param integer $side
      * @return BnGuild
      */
-    public function setSide($side)
+    public function set_side($side)
     {
         $this->side = $side;
     
@@ -123,31 +147,31 @@ class BnGuild
      *
      * @return integer 
      */
-    public function getSide()
+    public function get_side()
     {
         return $this->side;
     }
 
     /**
-     * Set achievementPoints
+     * Set achievement_points
      *
-     * @param integer $achievementPoints
+     * @param integer $achievement_points
      * @return BnGuild
      */
-    public function setAchievementPoints($achievementPoints)
+    public function set_achievement_points($achievement_points)
     {
-        $this->achievementPoints = $achievementPoints;
+        $this->achievement_points = $achievement_points;
     
         return $this;
     }
     
     /**
-     * Get achievementPoints
+     * Get achievement_points
      *
      * @return integer 
      */
-    public function getAchievementPoints()
+    public function get_achievement_points()
     {
-        return $this->achievementPoints;
+        return $this->achievement_points;
     }
 }

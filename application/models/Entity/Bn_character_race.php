@@ -1,16 +1,40 @@
 <?php
 
+/* 
+ * The MIT License
+ *
+ * Copyright 2014 Brian Webb (webbsdomain@gmail.com).
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 namespace Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * BnCharacterRace
+ * Bn_character_race
  *
  * @Table(name="battlenet_Character_Races")
  * @Entity
  */
-class BnCharacterRace
+class Bn_character_race
 {
     /**
      * @var integer
@@ -47,7 +71,7 @@ class BnCharacterRace
      *
      * @return integer 
      */
-    public function getId()
+    public function get_id()
     {
         return $this->id;
     }
@@ -56,9 +80,9 @@ class BnCharacterRace
      * Set mask
      *
      * @param integer $mask
-     * @return BnCharacterRace
+     * @return Bn_character_race
      */
-    public function setMask($mask)
+    public function set_mask($mask)
     {
         $this->mask = $mask;
     
@@ -70,7 +94,7 @@ class BnCharacterRace
      *
      * @return integer 
      */
-    public function getMask()
+    public function get_mask()
     {
         return $this->mask;
     }
@@ -79,9 +103,9 @@ class BnCharacterRace
      * Set side
      *
      * @param string $side
-     * @return BnCharacterRace
+     * @return Bn_character_race
      */
-    public function setSide($side)
+    public function set_side($side)
     {
         $this->side = $side;
     
@@ -93,7 +117,7 @@ class BnCharacterRace
      *
      * @return string 
      */
-    public function getSide()
+    public function get_side()
     {
         return $this->side;
     }
@@ -102,9 +126,9 @@ class BnCharacterRace
      * Set name
      *
      * @param string $name
-     * @return BnCharacterRace
+     * @return Bn_character_race
      */
-    public function setName($name)
+    public function set_name($name)
     {
         $this->name = $name;
     
@@ -116,7 +140,7 @@ class BnCharacterRace
      *
      * @return string 
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
