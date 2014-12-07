@@ -91,7 +91,7 @@ class Bn_character
      *
      * @return integer 
      */
-    public function get_id()
+    public function getId()
     {
         return $this->id;
     }
@@ -102,7 +102,7 @@ class Bn_character
      * @param string $name
      * @return Bn_character
      */
-    public function set_name($name)
+    public function setName($name)
     {
         $this->name = $name;
     
@@ -114,7 +114,7 @@ class Bn_character
      *
      * @return string 
      */
-    public function get_name()
+    public function getName()
     {
         return $this->name;
     }
@@ -125,7 +125,7 @@ class Bn_character
      * @param int $level
      * @return Bn_character
      */
-    public function set_level($level)
+    public function setLevel($level)
     {
         $this->level = $level;
     
@@ -137,7 +137,7 @@ class Bn_character
      *
      * @return int 
      */
-    public function get_level()
+    public function getLevel()
     {
         return $this->level;
     }
@@ -148,7 +148,7 @@ class Bn_character
      * @param string $thumbnail
      * @return Bn_character
      */
-    public function set_thumbnail($thumbnail)
+    public function setThumbnail($thumbnail)
     {
         $this->thumbnail = $thumbnail;
     
@@ -160,7 +160,7 @@ class Bn_character
      *
      * @return string 
      */
-    public function get_thumbnail()
+    public function getThumbnail()
     {
         return $this->thumbnail;
     }
@@ -171,7 +171,7 @@ class Bn_character
      * @param \Entity\Bn_character_class $class
      * @return Bn_character
      */
-    public function set_class(\Entity\Bn_character_class $class = null)
+    public function setClass(\Entity\Bn_character_class $class = null)
     {
         $this->class = $class;
     
@@ -183,7 +183,7 @@ class Bn_character
      *
      * @return \Entity\Bn_character_class
      */
-    public function get_class()
+    public function getClass()
     {
         return $this->class;
     }
@@ -194,7 +194,7 @@ class Bn_character
      * @param \Entity\Bn_character_race $race
      * @return Bn_character
      */
-    public function set_race(\Entity\Bn_character_race $race = null)
+    public function setRace(\Entity\Bn_character_race $race = null)
     {
         $this->race = $race;
     
@@ -206,7 +206,7 @@ class Bn_character
      *
      * @return \Entity\Bn_character_race
      */
-    public function get_race()
+    public function getRace()
     {
         return $this->race;
     }

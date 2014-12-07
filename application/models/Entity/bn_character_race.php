@@ -41,7 +41,7 @@ class Bn_character_race
      *
      * @Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=true)
      * @Id
-     * @GeneratedValue(strategy="IDENTITY")
+     * @GeneratedValue(strategy="NONE")
      */
     private $id;
     
@@ -65,13 +65,26 @@ class Bn_character_race
      * @Column(name="name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
     private $name;
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Bn_character_race
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    
+        return $this;
+    }
     
     /**
      * Get id
      *
      * @return integer 
      */
-    public function get_id()
+    public function getId()
     {
         return $this->id;
     }
@@ -82,7 +95,7 @@ class Bn_character_race
      * @param integer $mask
      * @return Bn_character_race
      */
-    public function set_mask($mask)
+    public function setMask($mask)
     {
         $this->mask = $mask;
     
@@ -94,7 +107,7 @@ class Bn_character_race
      *
      * @return integer 
      */
-    public function get_mask()
+    public function getMask()
     {
         return $this->mask;
     }
@@ -105,7 +118,7 @@ class Bn_character_race
      * @param string $side
      * @return Bn_character_race
      */
-    public function set_side($side)
+    public function setSide($side)
     {
         $this->side = $side;
     
@@ -117,7 +130,7 @@ class Bn_character_race
      *
      * @return string 
      */
-    public function get_side()
+    public function getSide()
     {
         return $this->side;
     }
@@ -128,7 +141,7 @@ class Bn_character_race
      * @param string $name
      * @return Bn_character_race
      */
-    public function set_name($name)
+    public function setName($name)
     {
         $this->name = $name;
     
@@ -140,7 +153,7 @@ class Bn_character_race
      *
      * @return string 
      */
-    public function get_name()
+    public function getName()
     {
         return $this->name;
     }
