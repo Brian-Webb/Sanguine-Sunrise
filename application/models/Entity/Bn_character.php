@@ -87,6 +87,13 @@ class Bn_character
     private $race;
 
     /**
+     * @var string
+     *
+     * @Column(name="title", type="string", length=80, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $title;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -209,5 +216,28 @@ class Bn_character
     public function getRace()
     {
         return $this->race;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Bn_character
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 }
