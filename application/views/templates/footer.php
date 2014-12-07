@@ -11,11 +11,11 @@
     <!-- /content wrapper -->
     
     <!-- footer -->
-    <div class="row">
+    <footer class="row">
         <div class="medium-12 columns panel">
             <h1>Footer</h1>
         </div>
-    </div>
+    </footer>
     <!-- /footer -->
     
     <script src="/js/vendor/jquery.js"></script>

@@ -9,13 +9,15 @@
   </head>
   <body>
     <!-- header -->
-    <div class="row">
+    <header class="row">
         <div class="medium-12 columns panel">
             <h1>Header</h1>
         </div>
-    </div>
+    </header>
     <!-- /header -->
+    
     <!-- content wrapper -->
     <div class="row">        
+        
         <!-- main content -->
         <div class="medium-9 columns right panel callout">
