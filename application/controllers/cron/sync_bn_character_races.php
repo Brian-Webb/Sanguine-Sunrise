@@ -42,7 +42,7 @@ class Sync_bn_character_races extends CI_Controller
     public function index()
     {
         // Gather battlnet data
-        $this->load->library('battlenet');
+        $this->load->library('Battlenet');
         $races = $this->battlenet->character_races();
         
         // For each class, check existence in DB 

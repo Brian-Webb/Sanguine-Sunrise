@@ -42,7 +42,7 @@ class Sync_bn_characters extends CI_Controller
     public function index()
     {
         // Gather battlnet data
-        $this->load->library('battlenet');
+        $this->load->library('Battlenet');
         $fullResults = $this->battlenet->guild_profile('members');
 
         $members = $fullResults['members'];        
