@@ -30,7 +30,7 @@ class User extends CI_Controller {
     
     public function replaceLoginForm($userId = false) {
         //ensure that the provided userId matches current session
-        if($userId === $this->session->userdata('loggedIn')){
+        if($userId == $this->session->userdata('loggedIn')){
             echo '<span>Logged into userid: <strong>' . $userId . '</strong></span>';
         } else {
             $this->session->set_userdata('hackingAttempt',TRUE);
