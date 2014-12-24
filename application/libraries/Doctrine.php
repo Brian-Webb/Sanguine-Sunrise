@@ -40,7 +40,7 @@ class Doctrine
         // e.g. Creating a new Entity\User loads the class from application/models/Entity/User.php
         $models_namespace   = 'Entity';
         $models_path        = APPPATH.'models';
-        $proxies_dir        = APPPATH.'models/Proxies';
+        $proxies_dir        = APPPATH.'models/Entity';
         $metadata_paths     = array(APPPATH.'models/Entity');
 
         // Set $dev_mode to TRUE to disable caching while you develop
