@@ -27,13 +27,13 @@
 class Battlenet {
 
     //Battlenet API Key
-    private $_apikey         = '';
+    private $_apikey         = 'apikey=v8qya6znxqwk3fxbt6nrc7ay5qzf7xck';
 
     //Static App Params
-    private $_baseRequestURI = '';
-    private $_serverName     = '';
-    private $_guildName      = '';
-    private $_locale         = '';
+    private $_baseRequestURI = 'https://us.api.battle.net/wow/';
+    private $_serverName     = 'wyrmrest-accord';
+    private $_guildName      = 'Sanguine%20Sunrise';
+    private $_locale         = 'locale=en_US';
 
 
     /**
@@ -44,11 +44,61 @@ class Battlenet {
      * @param:  string $fields - optional, CSV list of fields to call from API [members, achievements, news, challenge]
      * @return: array - json_decode of the returned json object
      */
-    public function guildProfileApi($fields = '') {
+    public function guild_profile($fields = '') {
         $uri = $this->_baseRequestURI . 'guild/' . $this->_serverName . '/' . $this->_guildName . '?' . $this->_locale . '&' . $this->_apikey;
 
         if(isset($fields) && !empty($fields)) {
-            $uri = $uri . '&fields=' . $fields;
+            $uri .= '&fields=' . $fields;
+        }
+
+        return $this->makeApiCall($uri);
+    }
+
+    
+    /**
+     * This method is used to get character race information from the Battle.net API
+     *
+     * This function invoked when the CRON is run to update guild information in the 'battlenet_*' synced tables
+     * @access: public
+     * @return: array - json_decode of the returned json object
+     */
+    public function character_races() {
+        $uri = $this->_baseRequestURI . 'data/character/races' . '?' . $this->_locale . '&' . $this->_apikey;
+
+        return $this->makeApiCall($uri);
+    }
+    
+
+    /**
+     * This method is used to get character race information from the Battle.net API
+     *
+     * This function invoked when the CRON is run to update guild information in the 'battlenet_*' synced tables
+     * @access: public
+     * @return: array - json_decode of the returned json object
+     */
+    public function character_classes() {
+        $uri = $this->_baseRequestURI . 'data/character/classes' . '?' . $this->_locale . '&' . $this->_apikey;
+
+        return $this->makeApiCall($uri);
+    }
+    
+
+    /**
+     * This method is used to get character information from the Battle.net API
+     *
+     * This function invoked when the CRON is run to update guild information in the 'battlenet_*' synced tables
+     * @access: public
+     * @return: array - json_decode of the returned json object
+     */
+    public function character($character_name, $fields = '') {
+        $uri = $this->_baseRequestURI . 'character/' . $this->_serverName . '/' . $character_name . '?' . $this->_locale . '&' . $this->_apikey;        
+        
+        if(isset($fields) && !empty($fields)) {
+            $uri .= '&fields=' . $fields;
+        }
+        else 
+        {
+            $uri .= '&fields=fields';
         }
 
         return $this->makeApiCall($uri);
@@ -81,5 +131,3 @@ class Battlenet {
         return json_decode($result,true);
     }
 }
-
-/* End of file Battlenet.php */
