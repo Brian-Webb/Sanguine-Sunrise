@@ -42,7 +42,7 @@ class Sync_bn_character_classes extends CI_Controller
     public function index()
     {
         // Gather battlnet data
-        $this->load->library('battlenet');
+        $this->load->library('Battlenet');
         $classes = $this->battlenet->character_classes();
         
         // Load bn_character model
