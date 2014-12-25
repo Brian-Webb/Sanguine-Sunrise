@@ -45,11 +45,14 @@ class Bn_character_model extends CI_Model
      * @param:  none
      * @return: array|boolean
      */
-    function get_characters() 
+    function get_characters($orderBy = FALSE) 
     {
         $characters = $this->_em->createQueryBuilder()
             ->select('bnc')
             ->from('Entity\Bn_character', 'bnc');
+        if($orderBy) {
+            $characters->orderBy('bnc.'.$orderBy,'asc');
+        }
         
         $result = $characters->getQuery()->getArrayResult();        
         return $result ? $result : FALSE;
@@ -85,7 +88,8 @@ class Bn_character_model extends CI_Model
             $result['thumbnail'] = 'http://us.battle.net/static-render/us/' . $character->getThumbnail();
             $result['class']     = $character->getClass()->getName();
             $result['race']      = $character->getRace()->getName();
-            $result['title']     = $character->getTitle();   
+            $result['title']     = $character->getTitle();  
+            $result['rank']     = $character->getTitle();   
         }
         else {
             $result = $character;
@@ -127,7 +131,8 @@ class Bn_character_model extends CI_Model
             $result['thumbnail'] = 'http://us.battle.net/static-render/us/' . $character->getThumbnail();
             $result['class']     = $character->getClass()->getName();
             $result['race']      = $character->getRace()->getName();
-            $result['title']     = $character->getTitle();            
+            $result['title']     = $character->getTitle();    
+            $result['rank']     = $character->getTitle();            
         }
         else {
             return $character ? $character : FALSE;
@@ -148,7 +153,7 @@ class Bn_character_model extends CI_Model
     * @param:  string $title
     * @return: int|boolean
     */
-    function add_bn_character($name, $level, $thumbnail, $class, $race, $title) 
+    function add_bn_character($name, $level, $thumbnail, $class, $race, $title, $rank) 
     {               
         // Create new character object
         $character = new Entity\Bn_character;
@@ -160,6 +165,7 @@ class Bn_character_model extends CI_Model
         $character->setClass($class);
         $character->setRace($race);
         $character->setTitle($title);
+        $character->setRank($rank);
 
         // Persist new character in db
         $this->_em->persist($character);
@@ -181,7 +187,7 @@ class Bn_character_model extends CI_Model
     * @param:  string $title
     * @return: int|boolean
     */
-    function update_character($id, $name, $level, $thumbnail, $class, $race, $title) 
+    function update_character($id, $name, $level, $thumbnail, $class, $race, $title, $rank) 
     {
         // Find Character
         $character = $this->get_character_by_id($id);
@@ -193,6 +199,7 @@ class Bn_character_model extends CI_Model
         $character->setClass($class);
         $character->setRace($race);
         $character->setTitle($title);
+        $character->setRank($rank);
 
         // Persist new character in db
         $this->_em->persist($character);

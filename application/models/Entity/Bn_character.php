@@ -92,6 +92,13 @@ class Bn_character
      * @Column(name="title", type="string", length=80, precision=0, scale=0, nullable=true, unique=false)
      */
     private $title;
+    
+    /**
+     * @var integer
+     *
+     * @Column(name="rank", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $rank;
 
     /**
      * Get id
@@ -239,5 +246,28 @@ class Bn_character
     public function getTitle()
     {
         return $this->title;
+    }
+    
+    /**
+     * Set rank
+     *
+     * @param int $rank
+     * @return Bn_character
+     */
+    public function setRank($rank)
+    {
+        $this->rank = $rank;
+    
+        return $this;
+    }
+
+    /**
+     * Get rank
+     *
+     * @return int 
+     */
+    public function getRank()
+    {
+        return $this->rank;
     }
 }

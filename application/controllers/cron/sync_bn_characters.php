@@ -65,6 +65,7 @@ class Sync_bn_characters extends CI_Controller
                 $thumbnail = $character['thumbnail'];
                 $class = $this->bn_character_class_model->get_class_by_id($character['class']);
                 $race = $this->bn_character_race_model->get_race_by_id($character['race']);
+                $rank = $member['rank'];
                 
             // Add title
                 $current_title = '';
@@ -87,12 +88,12 @@ class Sync_bn_characters extends CI_Controller
                 $id = $bn_character['id'];
 
                 // Update character
-                $character_id = $this->bn_character_model->update_character($id, $name, $level, $thumbnail, $class, $race, $current_title);
+                $character_id = $this->bn_character_model->update_character($id, $name, $level, $thumbnail, $class, $race, $current_title, $rank);
             }
             else
             {
                 // Add character
-                $character_id = $this->bn_character_model->add_bn_character($name, $level, $thumbnail, $class, $race, $current_title);
+                $character_id = $this->bn_character_model->add_bn_character($name, $level, $thumbnail, $class, $race, $current_title, $rank);
             }
         }
     }
