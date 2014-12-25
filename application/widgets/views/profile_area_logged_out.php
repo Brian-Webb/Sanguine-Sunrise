@@ -1,0 +1,1 @@
+<span><a href="#" id="register-launcher-button">Register</a> | <a href="#" onclick="ajaxModal('/widgets/loginForm');return false;">Login</a></span>

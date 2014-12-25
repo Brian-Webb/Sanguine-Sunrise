@@ -1,0 +1,1 @@
+<span>UserId: <?php echo $userId; ?> | <a href="#" onclick="userLogout();return false;">Logout</a></span>
