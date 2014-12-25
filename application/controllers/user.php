@@ -28,6 +28,11 @@ class User extends CI_Controller {
         echo $userId;
     }
     
+    public function logout() {
+        $this->session->sess_destroy();
+        echo TRUE;
+    }
+    
     public function replaceLoginForm($userId = false) {
         //ensure that the provided userId matches current session
         if($userId == $this->session->userdata('loggedIn')){
