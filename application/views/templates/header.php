@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title><?php if(isset($page_title) && !empty($page_title)) {echo $page_title . ' | ';} ?>Sanguine Sunrise</title>
-    <link rel="stylesheet" href="/css/foundation.css" />
-    <script src="/js/vendor/modernizr.js"></script>
+    <link href="/css/foundation.5.4.7.min.css" rel="stylesheet" />
+    <script src="js/vendor/modernizr.min.js"></script>
   </head>
   <body>
     <!-- header -->
