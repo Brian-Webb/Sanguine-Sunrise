@@ -6,11 +6,11 @@
  * and open the template in the editor.
  */
 
-class Character_list extends Widget
+class Roster extends Widget
 {
     function run() {
-        $data['characters'] = $this->bn_character_model->get_characters();
+        $data['characters'] = $this->bn_character_model->get_characters('rank');
         
-        $this->render('character_list', $data);
+        $this->render('roster', $data);
     }
 } 
