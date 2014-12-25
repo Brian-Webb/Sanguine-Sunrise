@@ -1,0 +1,1 @@
+<div data-alert class="alert-box <?php echo $type; ?>"><?php echo $msg; ?><a href="#" class="close">&times;</a></div>
