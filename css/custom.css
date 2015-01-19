@@ -1,16 +1,73 @@
 @import url(http://fonts.googleapis.com/css?family=Domine:400,700|Cinzel+Decorative:400,700,900);
 /* font-family: 'Cinzel Decorative', cursive; */
 /* font-family: 'Domine', serif; */
-
 body { 
 	background: #0E0E0E;
+	color: white;
 	font-family: 'Domine', serif;
+	font-size: .75em;
 }
-
+h1,h2,h3,h4,h5,h6 {
+	color: #FF8700;
+	font-family: 'Cinzel Decorative', cursive;
+}
 a:hover {
 	color: #FF8700;
 }
 
+/* Custom Default Classes */
+.accent-color {
+	color: #930006;
+}
+.bottom-border {
+	border-bottom: 1px dashed #C23B0A;
+}
+.center-text {
+	text-align: center;
+}
+/* --------------------- */
+
+/* Foundation Defaults */
+button, .button {
+	background-color: #930006;
+	border-color: #930006;
+	display: block;
+	font-family: 'Domine', serif;
+	font-size: .85rem;
+	font-weight: bold;
+	outline-color: #C23B0A;
+	padding: 1rem;
+	width: 100%;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+	background-color: #610004;
+}
+[data-abide] .error small.error, [data-abide] .error span.error, [data-abide] span.error, [data-abide] small.error {
+	background: #FF8700;
+	color: #0E0E0E;
+	font-weight: bold;
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+	color: #0E0E0E;
+	font-size: .75rem;
+}
+label {
+	color: white;
+	font-size: .75rem;
+}
+.switch input + label {
+	background: #3A3A3A;
+	margin: 0 6px 8px 0;
+	vertical-align: middle;
+}
+.switch input:checked + label {
+	background: #930006;
+}
+.switch label:after {
+	background: #ABABAB;
+}
+
+/* Header */
 .header {
     border-right: 2px solid #1A1A1A;	
     border-bottom: 2px solid #1A1A1A;
@@ -18,7 +75,9 @@ a:hover {
 .logo {
 	padding-bottom: 6px;
 }
+/* ------ */
 
+/* Sidebar */
 .sidebar { 
 	background: url('../img/zwartevilt.png');
 	border: 2px solid #1A1A1A;
@@ -63,3 +122,14 @@ a:hover {
 	text-align: center;
 	text-shadow: 0 0 8px #070707;
 }
+/* ------- */
+
+/* Raid Availability Form */
+.availability-form span {
+	display: block;
+	margin-bottom: 3px;
+}
+.times-wrapper {
+	display: none;
+}
+/* --------------------- */
