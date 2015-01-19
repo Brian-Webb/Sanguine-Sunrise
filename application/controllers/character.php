@@ -13,9 +13,9 @@ class Character extends CI_Controller {
             {                
                 $data['error_msg'] = 'Invalid character name, please try again.';
                 
-                $this->load->view('header', $data);
+                $this->load->view('templates/header', $data);
                 $this->load->view('error', $data);
-                $this->load->view('footer', $data);
+                $this->load->view('templates/footer', $data);
             }
             else
             {                
