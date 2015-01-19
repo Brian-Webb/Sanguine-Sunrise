@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = 'home';
+$route['default_controller'] = 'availability';
 $route['404_override'] = 'missing_page';
 
 //custom routes for subfolders
