@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Domine:400,700|Cinzel+Decorative:400,700,900);
+/* font-family: 'Cinzel Decorative', cursive; */
+/* font-family: 'Domine', serif; */
+
+body { 
+	background: #0E0E0E;
+	font-family: 'Domine', serif;
+}
+
+a:hover {
+	color: #FF8700;
+}
+
+.header {
+    border-right: 2px solid #1A1A1A;	
+    border-bottom: 2px solid #1A1A1A;
+}
+.logo {
+	padding-bottom: 6px;
+}
+
+.sidebar { 
+	background: url('../img/zwartevilt.png');
+	border: 2px solid #1A1A1A;
+}
+.sidebar ul {
+	font-size: .8rem;
+	line-height: 1;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.sidebar ul li a {
+	background: rgba(95, 95, 95, 0.1);
+	border-bottom: 1px dashed #C23B0A;
+	display: block;
+	padding: 8px 5px;
+	text-shadow: 1px 1px 1px #030303;
+	transition: .3s;
+}
+.sidebar ul li a:hover {
+	background: transparent;
+}
+.sidebar ul li:first-of-type a {
+	border-top: 1px solid #872907;
+}
+.sidebar ul li:last-of-type a {
+	border-bottom: 1px solid #872907;
+}
+.sidebar-widget {
+	margin-bottom: 10px;
+}
+.sidebar-widget:last-of-type {
+	margin: 0;
+}
+.widget-title {
+	color: #930006;
+	display: block;
+	font-family: 'Cinzel Decorative', cursive;
+	font-size: 1.3rem;
+	font-weight: 700;
+	padding: 5px 0;
+	text-align: center;
+	text-shadow: 0 0 8px #070707;
+}

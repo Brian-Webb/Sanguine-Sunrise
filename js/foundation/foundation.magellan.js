@@ -4,7 +4,7 @@
   Foundation.libs['magellan-expedition'] = {
     name : 'magellan-expedition',
 
-    version : '5.4.7',
+    version : '5.2.3',
 
     settings : {
       active_class: 'active',
@@ -12,7 +12,7 @@
       destination_threshold: 20, // pixels from the top of destination for it to be considered active
       throttle_delay: 30, // calculation throttling to increase framerate
       fixed_top: 0 // top distance in pixels assigend to the fixed element on scroll
-    },
+    }, 
 
     init : function (scope, method, options) {
       Foundation.inherit(this, 'throttle');
@@ -35,15 +35,13 @@
               settings = expedition.data('magellan-expedition-init'),
               hash = this.hash.split('#').join(''),
               target = $("a[name='"+hash+"']");
-
+          
           if (target.length === 0) {
             target = $('#'+hash);
-
           }
 
-
           // Account for expedition height if fixed position
-          var scroll_top = target.offset().top - settings.destination_threshold + 1;
+          var scroll_top = target.offset().top;
           scroll_top = scroll_top - expedition.outerHeight();
 
           $('html, body').stop().animate({
@@ -58,7 +56,7 @@
           });
         })
         .on('scroll.fndtn.magellan', self.throttle(this.check_for_arrivals.bind(this), settings.throttle_delay));
-
+      
       $(window)
         .on('resize.fndtn.magellan', self.throttle(this.set_expedition_position.bind(this), settings.throttle_delay));
     },
@@ -73,17 +71,11 @@
       var self = this;
       $('[' + this.attr_name() + '=fixed]', self.scope).each(function(idx, el) {
         var expedition = $(this),
-            settings = expedition.data('magellan-expedition-init'),
             styles = expedition.attr('styles'), // save styles
-            top_offset, fixed_top;
+            top_offset;
 
         expedition.attr('style', '');
-        top_offset = expedition.offset().top + settings.threshold;
-
-        //set fixed-top by attribute
-        fixed_top = parseInt(expedition.data('magellan-fixed-top'));
-        if(!isNaN(fixed_top))
-            self.settings.fixed_top = fixed_top;
+        top_offset = expedition.offset().top + self.settings.threshold;
 
         expedition.data(self.data_attr('magellan-top-offset'), top_offset);
         expedition.attr('style', styles);
@@ -96,12 +88,9 @@
 
       $('[' + this.attr_name() + '=fixed]', self.scope).each(function() {
         var expedition = $(this),
-            settings = expedition.data('magellan-expedition-init'),
-            styles = expedition.attr('style'), // save styles
             top_offset = expedition.data('magellan-top-offset');
 
-        //scroll to the top distance
-        if (window_top_offset+self.settings.fixed_top >= top_offset) {
+        if (window_top_offset >= top_offset) {
           // Placeholder allows height calculations to be consistent even when
           // appearing to switch between fixed/non-fixed placement
           var placeholder = expedition.prev('[' + self.add_namespace('data-magellan-expedition-clone') + ']');
@@ -111,10 +100,10 @@
             placeholder.attr(self.add_namespace('data-magellan-expedition-clone'),'');
             expedition.before(placeholder);
           }
-          expedition.css({position:'fixed', top: settings.fixed_top}).addClass('fixed');
+          expedition.css({position:'fixed', top: self.settings.fixed_top});
         } else {
           expedition.prev('[' + self.add_namespace('data-magellan-expedition-clone') + ']').remove();
-          expedition.attr('style',styles).css('position','').css('top','').removeClass('fixed');
+          expedition.attr('style','').removeClass('fixed');
         }
       });
     },
@@ -152,7 +141,7 @@
         var name = $(this).data(self.data_attr('magellan-arrival')),
             dest = $('[' + self.add_namespace('data-magellan-destination') + '=' + name + ']');
         if (dest.length > 0) {
-          var top_offset = Math.floor(dest.offset().top - settings.destination_threshold - expedition.outerHeight());
+          var top_offset = dest.offset().top - settings.destination_threshold - expedition.outerHeight();
           return {
             destination : dest,
             arrival : $(this),
